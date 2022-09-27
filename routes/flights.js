@@ -6,6 +6,8 @@ const router = Router()
 //GET /movies/new
 router.get('/new', flightsCtrl.new)
 
+router.post('/', flightsCtrl.create)
+
 export {
   router
 }
