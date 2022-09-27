@@ -5,7 +5,7 @@ const Schema = mongoose.Schema
 const flightSchema = new Schema({
   airline: String,
   airport: String,
-  fightNo: Number,
+  flightNo: Number,
   departs: Date,
 }, {
   timestamps: true

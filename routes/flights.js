@@ -3,6 +3,7 @@ import * as flightsCtrl from '../controllers/flights.js'
 
 const router = Router()
 
+router.get('/', flightsCtrl.index)
 //GET /movies/new
 router.get('/new', flightsCtrl.new)
 
