@@ -5,15 +5,24 @@
 <main>
   <h1><%= title %></h1>
   <form id="new-form" action="/flights" method="post">
-    <label for="title-input">Airline:</label>
-    <input type="text" name="airline" id="title-input">
+    <label for="airline">Airline</label>
+    <select name="airline" id="airline">
+      <option value="American">American</option>
+      <option value="Southwest">Southwest</option>
+      <option value="United">United</option>
+    </select>
 
-    <label for="airport-input">Airport:</label>
-    <input type="text" name="airline" id="airport-input">
+    <label for="airport">Airport</label>
+    <select name="airport" id="airport">
+      <option value="AUS">AUS</option>
+      <option value="DFW">DFW</option>
+      <option value="DEN">DEN</option>
+      <option value="LAX">LAX</option>
+      <option value="SAN">SAN</option>
+    </select>
 
-    <label for="flightNo-input">Flight Number:</label>
-    <input name="flightNo" id="flightNo=input">
-      
+    <label for="flightNo">Flight Number:</label>
+    <input name="flightNo" id="flightNo-input">
     
     <button type="submit">Add Flights</button>
   </form>
