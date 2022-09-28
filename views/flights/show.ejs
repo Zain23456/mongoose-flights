@@ -26,12 +26,36 @@
     </a>
   </section>
   <section>
-    <h3>Ticket</h3>
-    <form id="add-ticket-form" action="'/flights/<%= flight._id %>/ticket" method="post">
+    <form id="add-ticket-form" action="/flights/<%= flight._id %>/ticket" method="post">
     
-      <label for="seat">Ticket:</label>
-      <input name="seat"
+      <label for="seat">Seat:</label>
+      <input name="seat" id="seat-input" required pattern="[A-F][1-9]\d?">
+      <label for="price">Price:</label>
+      <input name="price" required id="price-input">
+      <button type="submit">Add Ticket</button>
     </form>
+  </section>
+  <section>
+    <% if (flight.tickets.length) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>Seat</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% flight.tickets.forEach(function(ticket) { %>
+            <tr>
+              <td><%= ticket.seat %></td>
+              <td><%= ticket.price %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <h3>No Tickets Yet</h3>
+    <% } %>
   </section>
 </main>
 <%- include('../partials/footer') %>
