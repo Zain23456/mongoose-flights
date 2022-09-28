@@ -25,5 +25,13 @@
       <button>Edit Flight</button>
     </a>
   </section>
+  <section>
+    <h3>Ticket</h3>
+    <form id="add-ticket-form" action="'/flights/<%= flight._id %>/ticket" method="post">
+    
+      <label for="seat">Ticket:</label>
+      <input name="seat"
+    </form>
+  </section>
 </main>
 <%- include('../partials/footer') %>
