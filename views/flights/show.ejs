@@ -25,11 +25,13 @@
       <button>Edit Flight</button>
     </a>
   </section>
+  <h3>Tickets</h3>
   <section>
     <form id="add-ticket-form" action="/flights/<%= flight._id %>/ticket" method="post">
     
       <label for="seat">Seat:</label>
       <input name="seat" id="seat-input" required pattern="[A-F][1-9]\d?">
+
       <label for="price">Price:</label>
       <input name="price" required id="price-input">
       <button type="submit">Add Ticket</button>
@@ -57,5 +59,26 @@
       <h3>No Tickets Yet</h3>
     <% } %>
   </section>
+  <h3>Meals</h3>
+  <section>
+    <form id="add-meal-form" action="/flights/<%= flight._id %>/meals" method="post">
+      <select name="mealId">
+        <% meals.forEach(meal => { %>
+          <option value="<%= meal._id %>"><%= meal.name %></option>
+        <% }) %>
+      </select>
+      <button type="submit">Add Meal</button>
+    </form>
+  </section>
+
+  <section>
+    <ul>
+      <% flight.meals.forEach(meal => { %>
+        <li><%= meal.name %></li>
+      <% }) %>
+    </ul>
+  </section>
+
+  
 </main>
 <%- include('../partials/footer') %>
